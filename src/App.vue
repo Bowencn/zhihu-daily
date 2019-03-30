@@ -1,28 +1,41 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="zhihu">
+    <v-header></v-header>
+    <v-nav></v-nav>
+    <v-content :info="info.data"></v-content>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'app',
-  components: {
-    HelloWorld
+import header from '@/components/header'
+import nav from '@/components/nav'
+import content from '@/components/content'
+// import axios from 'axios'
+export default{
+  name:'zhihu',
+  data(){
+    return {
+      info:''
+    }
+  },
+  components:{
+    'v-header': header,
+    'v-nav': nav,
+    'v-content': content
+  },
+  mounted(){
+    this.$axios
+      .get('api/4/news/latest')
+      .then(res => (
+        this.info = res,
+        // eslint-disable-next-line no-console
+        console.log(res)
+      ))
   }
+  
 }
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style scoped>
+  @import url('./assets/reset.css');
 </style>
