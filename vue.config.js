@@ -8,8 +8,9 @@ module.exports = {
   devServer:{
     proxy:{
       '/api':{
-        target:'https://news-at.zhihu.com',
-        // secure:true,
+        // target:'http://news-at.zhihu.com/',
+        target:'http://zhihu-agent.herokuapp.com/get?api=',
+        secure:false,
         changeOrigin:true,
         // ws:true,
         pathRewrite:{
