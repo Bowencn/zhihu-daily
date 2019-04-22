@@ -40,6 +40,15 @@ export default {
   },
   deactivated:function () {
     this.data = ""
+  },
+  mounted(){
+    window.addEventListener("popstate",this.goBack,false)
+  },
+  methods:{
+    goBack(){
+      this.$store.state.status = 0
+      window.history.back()
+    }
   }
 }
 </script>
