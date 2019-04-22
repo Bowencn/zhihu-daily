@@ -218,5 +218,6 @@ export default{
     text-align: justify;
     color: rgb(95, 95, 95);
     font-weight: 600;
+    line-height: 5vw;
   }
 </style>
