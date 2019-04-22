@@ -1,29 +1,13 @@
-# zhihu
+# 知乎日报
+  [项目地址](http://daily.bwcn.site/)
+___
+## 简介
+_ _ _
+  * 该项目是一个简约版的知乎日报
 
-## Project setup
-```
-npm install
-```
+  * 使用vue-cli3 构建、打包，配合vue全家桶(vue vuex vue-router) 进行编写、使用axios进行资源请求
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+  * api取自[知乎](https://www.zhihu.com/explore)
 
-### Compiles and minifies for production
-```
-npm run build
-```
 
-### Run your tests
-```
-npm run test
-```
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
