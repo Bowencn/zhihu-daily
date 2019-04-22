@@ -111,7 +111,7 @@ export default{
       let vue = this
       this.$store.commit('show')
       // eslint-disable-next-line no-console
-      console.log(this.$store.state.loading);
+      console.log('3.29-4.22');
       
       this.$router.push({
         path:"article",
