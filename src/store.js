@@ -17,11 +17,5 @@ export default new Vuex.Store({
     hide(state){
       state.loading = false
     }
-  },
-  actions: {
-    
-  },
-  getters:{
-    
   }
 })

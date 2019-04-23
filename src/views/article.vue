@@ -29,26 +29,15 @@ export default {
         this.$store.commit('hide')
     if (this.articleId.hasOwnProperty(id)) {
       this.data = this.articleId[id];
-      
 		} else {
 			api.getNewsId(id).then(function(data) {
 				vue.articleId[id] = data.data;
         vue.data = data.data;
-        // vue.$store.commit('hide')
 			});
 		}
   },
   deactivated:function () {
     this.data = ""
-  },
-  mounted(){
-    window.addEventListener("popstate",this.goBack,false)
-  },
-  methods:{
-    goBack(){
-      this.$store.state.status = 0
-      window.history.back()
-    }
   }
 }
 </script>

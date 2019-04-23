@@ -1,6 +1,5 @@
 <template>
   <div id="zhihu">
-    <v-header v-show="status"></v-header>
     <keep-alive>
       <router-view></router-view>
     </keep-alive>
@@ -9,14 +8,9 @@
 </template>
 
 <script>
-import header from '@/components/header'
 import loading from '@/components/loading'
 export default{
   name:'zhihu',
-  data(){
-    return {
-    }
-  },
   computed:{
     status(){
       return this.$store.state.status
@@ -26,10 +20,8 @@ export default{
     }
   },
   components:{
-    'v-header': header,
     'loading':loading
-  },
-  methods:{}
+  }
 }
 </script>
 

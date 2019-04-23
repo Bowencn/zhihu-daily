@@ -1,5 +1,5 @@
 <template>
-  <div class='app-view' @click="handleScroll()">
+  <div class='app-view'>
     <swiper class="swiper-wrapper" :options="swiperOption"  ref="mySwiper">
       <swiper-slide class="swiper-slide" v-for="item in top" :key="item.id" @click.native="getId(item.id)">  
         <img :src="item.image">
@@ -8,7 +8,6 @@
       <div class="swiper-pagination" slot="pagination"></div>
     </swiper>
     <div class="list" v-for="(items,index) in list" :key="items.id" ref="list">
-      <!-- <p class="list-date">{{items.date.substring(4,6)+"月"+items.date.substring(6,8)+"日"}}</p> -->
       <p class="list-date">{{date[index]}}</p>
       <div class="list-con" v-for="item in items.stories" :key="item.id" @click="getId(item.id)">
         <img class="list-img" :src="item.images">
@@ -79,8 +78,6 @@ export default{
           this.list.push(res.data)
           this.top = res.data.top_stories
           this.$store.commit('hide')
-          // eslint-disable-next-line no-console
-          console.log(this.top);
         })
       }else{
         api.getNewsDate(vue.getNewsDate(vue.count)).then(res=>{
@@ -112,7 +109,6 @@ export default{
       this.$store.commit('show')
       // eslint-disable-next-line no-console
       console.log('3.29-4.22');
-      
       this.$router.push({
         path:"article",
         query:{
